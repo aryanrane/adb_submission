@@ -41,7 +41,7 @@ class TodoListView(APIView):
             if todo_data:
                 todo_collection.insert_one(todo_data)
             
-            # Fetch the newly inserted TODO items from the MongoDB collection
+            # Adding the newly inserted TODO items from the MongoDB collection
             todos = list(todo_collection.find())
             for todo in todos:
                 todo['_id'] = str(todo['_id'])
